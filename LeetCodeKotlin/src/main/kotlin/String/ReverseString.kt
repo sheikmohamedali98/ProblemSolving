@@ -17,16 +17,33 @@ class ReverseString {
             end--
 
         }
-        println(Arrays.toString(charArray))
+        println(charArray.contentToString())
         var word:String = charArray.toString()
 
-        print(word)
+//        print(word)
         return word
 
+    }
+
+
+    fun reverseString(string: String){
+        val stack = Stack<Char>()
+        var str:String = ""
+        for(i in 0 until  string.length){
+            stack.push(string.get(i))
+        }
+        while (!stack.empty()){
+//            str += stack.pop().toString()
+
+            print("${stack.pop()}")
+        }
+//        println(str)
     }
 }
 
 fun main(){
     val reverseString = ReverseString()
-    print("${reverseString.reverse("Hello")}")
+    reverseString.reverse("Hello")
+println()
+    reverseString.reverseString("java")
 }
