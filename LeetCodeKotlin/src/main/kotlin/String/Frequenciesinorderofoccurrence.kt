@@ -14,8 +14,23 @@ class Frequenciesinorderofoccurrence {
             }
         }
     }
+
+    fun finfFrequencyCount(string: String){
+        val map = mutableMapOf<Char,Int>()
+        val stringArray = string.toCharArray()
+        for ( i in stringArray) {
+            if (map.containsKey(i)){
+                map.put(i,map.getValue(i)+1)
+            }else{
+                map.put(i,1)
+            }
+        }
+        println(map)
+
+    }
 }
 fun main(){
     val frequenciesinorderofoccurrence =  Frequenciesinorderofoccurrence()
     frequenciesinorderofoccurrence.findFrequency("java")
+    frequenciesinorderofoccurrence.finfFrequencyCount("java")
 }
